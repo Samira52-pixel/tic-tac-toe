@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math/rand/v2"
 	"os"
 	"strconv"
 	"strings"
@@ -26,10 +27,13 @@ const (
 )
 
 func main() {
+
+newGame:
 	reader := bufio.NewReader(os.Stdin)
 	boardSize := 3 // размер игрового поля по умолчанию
 	state := playing
-	currentPlayer := cross // текущий игрок
+	// rand.IntN(2) + 1
+	currentPlayer := (BoardField)(rand.IntN(2) + 1) // текущий игрок
 
 	// Ввод размера доски
 	for {
@@ -225,8 +229,10 @@ func main() {
 			// Вывод сообщения о результате, если игра окончена
 			if state == crossWin {
 				fmt.Println("X wins!")
+				goto newGame
 			} else if state == noughtWin {
 				fmt.Println("O wins!")
+				goto newGame
 			} else if state == draw {
 				fmt.Println("It's a draw!")
 			} else {
