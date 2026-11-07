@@ -7,4 +7,5 @@ const (
 	empty BoardField = iota
 	cross
 	nought
+	zed
 )

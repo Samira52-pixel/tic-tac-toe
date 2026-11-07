@@ -4,7 +4,7 @@ import "fmt"
 
 const (
 	BoardDefaultSize int = 3
-	BoardMinSize     int = 3
+	BoardMinSize     int = 5
 	BoardMaxSize     int = 9
 )
 

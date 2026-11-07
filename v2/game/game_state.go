@@ -8,5 +8,6 @@ const (
 	draw
 	crossWin
 	noughtWin
+	zedWin
 	quit
 )
